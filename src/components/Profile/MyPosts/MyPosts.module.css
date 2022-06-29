@@ -1,4 +1,7 @@
-.posts {
-
+.postBlock {
+    padding: 40px;
 }
 
+.posts {
+    margin-top: 40px;
+}

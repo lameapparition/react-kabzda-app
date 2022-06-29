@@ -1,0 +1,21 @@
+.dialogue {
+    display: flex;
+    padding-left: 10px;
+    margin: 20px;
+    height: 70px;
+    width: 200px;
+    border: solid rgb(22, 72, 129) 2px;
+    border-radius: 10px;
+    /* align-content: center; */
+    
+}
+
+.item {
+    color: white;;
+    text-decoration: none;
+    line-height: 70px;
+}
+
+.dialogue img {
+    height: 100%
+}

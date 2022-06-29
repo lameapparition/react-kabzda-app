@@ -10,7 +10,7 @@ import {
   Routes
 } from 'react-router-dom';
 
-const App = () => {
+const App = (props) => {
   return (
     <Router>
       <div className='app-wrapper'>
@@ -18,8 +18,12 @@ const App = () => {
         <Navbar />
         <div className='content'>
           <Routes>
-            <Route path='profile' element={<Profile />} />
-            <Route path='im' element={<Dialogues />} />
+            <Route path='profile' element={
+              <Profile posts={props.posts} />
+            } />
+            <Route path='im/*' element={
+              <Dialogues dialogues={props.dialogues} messages={props.messages} />
+            } />
             <Route path='feed' element='Feed' />
             <Route path='music' element='Music' />
             <Route path='settings' element='Settings' />

@@ -1,19 +1,17 @@
 .dialogues {
-
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-column-gap: 50px;
 }
 
 .dialogueItems {
-
-}
-
-.dialogue {
-
+    
 }
 
 .messages {
-
+    
 }
 
-.message {
-
+.active {
+    color: gold;
 }

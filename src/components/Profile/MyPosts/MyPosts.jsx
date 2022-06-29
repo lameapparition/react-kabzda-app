@@ -2,19 +2,22 @@ import React from 'react'
 import c from './MyPosts.module.css'
 import Post from './Post/Post'
 
-export default function MyPosts() {
+export default function MyPosts(props) {
+
+    let postsElements = props.posts
+        .map(p => <Post content={p.content} likeCount={p.likeCount} />)
+
     return (
-        <div>
-            My posts
+        <div className={c.postBlock}>
+            <h3>My posts</h3>
             <div>
-                <textarea></textarea>
+                <div>
+                    <textarea></textarea>
+                </div>
                 <button>Add post</button>
             </div>
             <div className={c.posts}>
-                <Post message='hi, how are you?' likecount={2}/>
-                <Post message='I love water xD' likecount={10}/>
-                <Post message='Pamparam' likecount={7}/>
-                <Post message='My first post!!!' likecount={5}/>
+                {postsElements}
             </div>
         </div>
     )
