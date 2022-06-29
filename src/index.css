@@ -1,4 +1,7 @@
 body {
+  background-image: url(https://i.pinimg.com/originals/ec/56/38/ec5638f558b00f3be950446d8cb84fce.jpg);
+  background-position-y: center;
+  background-attachment: fixed;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',

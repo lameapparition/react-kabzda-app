@@ -1,0 +1,35 @@
+.nav {
+  grid-area: n;
+  background-color: rgba(158, 173, 173, 0.6);
+}
+
+.item {
+  color: white;
+  border: solid rgb(39, 140, 187) 3px;
+  margin: 15px;
+  background-color: rgb(73, 103, 168);
+}
+
+/* .default {
+  color: white;
+}
+
+.active {
+  color: gold;
+} */
+
+.item:hover {
+  background-color: rgb(56, 80, 131);
+  cursor: pointer;
+}
+
+/* .item a:active,
+.item a:hover, */
+.item a {
+  text-decoration: none;
+  color: white
+}
+
+.item::before {
+  content: '🌢 ';
+}
