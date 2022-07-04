@@ -3,17 +3,39 @@
     display: grid;
     grid-template-columns: 1fr 6fr;
     grid-column-gap: 10px;
+    height: 100%;
 }
 
 .dialoguesItems {
-    border-right: 5px solid rgba(115, 216, 247, 0.185);
-    height: 100vh;
+    /* border-right: 5px solid rgba(115, 216, 247, 0.195); */
+    border-right: 5px solid rgb(0, 0, 0);
 }
 
 .messages {
-    margin: 20px;
+    /* height: 87vh; */
 }
 
 .active {
     color: gold;
+}
+
+.messageInput {
+    margin-bottom: 20px;
+    align-self: flex-end;
+    display: flex;
+    grid-column: 2 / 3;
+    align-items: center;
+    height: 30px;
+}
+
+.inputBlock {
+    font-size: 20px;
+    width: 90%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.363);
+}
+
+.messageInput img {
+    width: 10%;
+    cursor: pointer;
 }

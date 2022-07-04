@@ -7,12 +7,16 @@
     border-radius: 7px;
 }
 
-.user {
+._user {
     margin-left: auto;
-    margin-top: 15px;
     background-color: rgba(255, 255, 255, 0.562);
-    /* block-size: fit-content; */
+
+    /* margin-top: 15px;
+    
+    
     width: fit-content;
     padding: 7px;
-    border-radius: 7px;
+    border-radius: 7px; */
+
+    /* block-size: fit-content; */
 }
