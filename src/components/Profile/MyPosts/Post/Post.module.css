@@ -1,22 +1,28 @@
 .item img {
-    width: 80px;
-    height: 80px;
-    border-radius: 15px;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
     object-fit: cover;
 }
 
 .item {
-    color: rgb(93, 93, 196);
+    color: rgb(59, 59, 59);
+    margin-top: 20px;
+    /* display: block; */
     
+}
+
+.main {
+    /* margin-right: 10px; */
+    padding: 5px;
+    align-items: center;
+    display: flex;
+    border: 2px solid rgb(59, 59, 59);
+    border-radius: 10px;
 }
 
 .like::before {
     content: '❤'
-}
-
-span {
-    
-    margin-right: 30px;
 }
 
 /* .item>* {
@@ -24,15 +30,15 @@ span {
 } */
 
 .post {
-    top: 0%;
-    display: inline-block;
+    margin-left: 10px;
+    /* top: 0%; */
+    /* display: inline-block; */
 }
 
 .postFooter>* {
-    margin-right: 40px;
+    margin-top: 5px;
     text-align: center;
-    display: inline-block;
     width: 60px;
-    border: solid rgb(93, 93, 196) 2px;
+    border: solid rgb(59, 59, 59) 2px;
     border-radius: 10px;
 }

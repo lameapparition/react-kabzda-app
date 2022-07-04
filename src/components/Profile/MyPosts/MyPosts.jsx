@@ -2,19 +2,27 @@ import React from 'react'
 import c from './MyPosts.module.css'
 import Post from './Post/Post'
 
-export default function MyPosts(props) {
+const MyPosts = (props) => {
 
     let postsElements = props.posts
         .map(p => <Post content={p.content} likeCount={p.likeCount} />)
 
+    let newPostElement = React.createRef();
+
+    let addPost = () => {
+        let text = newPostElement.current.value;
+        props.addPost(text);
+        newPostElement.current.value = '';
+    }
+
     return (
         <div className={c.postBlock}>
-            <h3>My posts</h3>
+            <h2>My posts</h2>
             <div>
                 <div>
-                    <textarea></textarea>
+                    <textarea ref={newPostElement}></textarea>
                 </div>
-                <button>Add post</button>
+                <button onClick={addPost}>Add post</button>
             </div>
             <div className={c.posts}>
                 {postsElements}
@@ -22,3 +30,5 @@ export default function MyPosts(props) {
         </div>
     )
 }
+
+export default MyPosts;

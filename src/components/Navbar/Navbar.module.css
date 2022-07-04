@@ -4,10 +4,40 @@
 }
 
 .item {
+  line-height: 2em;
+  height: 2em;
   color: white;
   border: solid rgb(39, 140, 187) 3px;
   margin: 15px;
   background-color: rgb(73, 103, 168);
+}
+
+.friends {
+  color: white;
+  border: solid rgb(39, 140, 187) 3px;
+  background-color: rgb(73, 103, 168);
+  margin: 15px;
+}
+
+.friendsTitle {
+  margin-top: 5px;
+}
+
+.friendsTitle::before {
+  content: '🌢 ';
+}
+
+.hidden {
+  display: none;
+}
+
+.friendsBlock {
+  margin: 10px;
+  justify-items: center;
+  display: grid;
+  column-gap: 10px;
+  row-gap: 10px;
+  grid-template-columns: 1fr 1fr;
 }
 
 /* .default {

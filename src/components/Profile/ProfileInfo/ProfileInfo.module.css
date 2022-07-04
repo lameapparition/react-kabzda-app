@@ -1,0 +1,35 @@
+.background {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0 5px 100px rgba(255, 255, 255, 0.9);
+}
+
+.description {
+  color: rgb(59, 59, 59);
+  display: flex;
+  margin: 15px;
+  /* padding: 40px; */
+}
+
+.description img {
+  border-radius: 5%;
+  border: 3px solid rgb(193, 202, 255);
+  height: 150px;
+  width: 150px;
+  object-fit: cover;
+}
+
+.nameDescription {
+  margin: 0 25px;
+}
+
+.profileName {
+  font-size: 45px;
+}
+
+.description div {
+  /* display: block; */
+  right: 100px;
+}

@@ -1,15 +1,17 @@
 .dialogues {
+    margin: 10px;
     display: grid;
-    grid-template-columns: 1fr 5fr;
-    grid-column-gap: 50px;
+    grid-template-columns: 1fr 6fr;
+    grid-column-gap: 10px;
 }
 
-.dialogueItems {
-    
+.dialoguesItems {
+    border-right: 5px solid rgba(115, 216, 247, 0.185);
+    height: 100vh;
 }
 
 .messages {
-    
+    margin: 20px;
 }
 
 .active {

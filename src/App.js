@@ -5,32 +5,32 @@ import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 import Dialogues from './components/Dialogues/Dialogues';
 import {
-  BrowserRouter as Router,
   Route,
   Routes
 } from 'react-router-dom';
 
 const App = (props) => {
   return (
-    <Router>
-      <div className='app-wrapper'>
-        <Header />
-        <Navbar />
-        <div className='content'>
-          <Routes>
-            <Route path='profile' element={
-              <Profile posts={props.posts} />
-            } />
-            <Route path='im/*' element={
-              <Dialogues dialogues={props.dialogues} messages={props.messages} />
-            } />
-            <Route path='feed' element='Feed' />
-            <Route path='music' element='Music' />
-            <Route path='settings' element='Settings' />
-          </Routes>
-        </div>
+    <div className='app-wrapper'>
+      <Header />
+      <Navbar state={props.state.sideBar} />
+      <div className='content'>
+        <Routes>
+          <Route path='profile' element={
+            <Profile
+              state={props.state.profilePage}
+              addPost={props.addPost} />
+          } />
+          <Route path='im/*' element={
+            <Dialogues
+              state={props.state.messagesPage} />
+          } />
+          <Route path='feed' element='Feed' />
+          <Route path='music' element='Music' />
+          <Route path='settings' element='Settings' />
+        </Routes>
       </div>
-    </Router>
+    </div>
   );
 }
 

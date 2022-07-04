@@ -1,0 +1,12 @@
+.item {
+    /* justify-self: center; */
+    /* width: 80px; */
+    text-align: center;
+}
+
+.item img {
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+    object-fit: cover;
+}
