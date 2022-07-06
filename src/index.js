@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import store from './redux/store';
+import store from './redux/reduxStore';
 import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-const rerenderEntireTree = (props) => {
+const rerenderEntireTree = (state) => {
     root.render(
         <BrowserRouter>
-            <App state={store.getState()}
+            <App state={state}
                 dispatch={store.dispatch.bind(store)} 
             />
         </BrowserRouter>
@@ -22,7 +22,11 @@ export default rerenderEntireTree;
 
 rerenderEntireTree(store.getState());
 
-store.subscribe(rerenderEntireTree);
+store.subscribe(() => {
+    let state = store.getState();
+    rerenderEntireTree(state);
+
+});
 
 
 

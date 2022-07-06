@@ -7,7 +7,7 @@ import {
 } from '../../../redux/profileReducer'
 
 const MyPosts = (props) => {
-
+    debugger;
     let postsElements = props.posts
         .map(p => <Post content={p.content} likeCount={p.likeCount} />)
 
