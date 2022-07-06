@@ -3,6 +3,8 @@ import c from './Dialogues.module.css'
 import DialogueItem from './DialogueItem/DialogueItem';
 import Message from './Message/Message';
 import Send from './send.png'
+import { sendMessageCreator, updateNewMessageTextCreator } from '../../redux/dialoguesReducer';
+
 
 const Dialogues = (props) => {
 
@@ -13,16 +15,13 @@ const Dialogues = (props) => {
     let messagesElements = props.messagesPage.messages
         .map(m => <Message content={m.content} user={m.user} />);
 
-
-    let newMessageElement = React.createRef();
-
-    let addMessage = () => {
-        props.addMessage();
+    let onSendMessageClick = () => {
+        props.dispatch(sendMessageCreator());
     }
 
-    let onMessageChange = () => {
-        let text = newMessageElement.current.value;
-        props.updateMessageText(text);
+    let onMessageChange = (e) => {
+        let text = e.target.value
+        props.dispatch(updateNewMessageTextCreator(text));
     }
 
     return (
@@ -30,17 +29,26 @@ const Dialogues = (props) => {
             <div className={c.dialoguesItems}>
                 {dialoguesElements}
             </div>
-            <div className={c.messages}>
-                {messagesElements}
+            <div className={c.chat}>
+                <div className={c.messages}>
+                    {messagesElements}
+                </div>
+                <div className={c.messageInput}>
+                    <textarea className={c.inputBlock}
+                        onChange={onMessageChange}
+                        value={props.messagesPage.newMessageText}
+                    />
+                    <img onClick={onSendMessageClick} src={Send} />
+                </div>
             </div>
-            <div className={c.messageInput}>
+            {/* <div className={c.messageInput}>
                 <textarea className={c.inputBlock}
                     onChange={onMessageChange}
                     ref={newMessageElement}
                     value={props.messagesPage.newMessageText}
                 />
                 <img onClick={addMessage} src={Send} />
-            </div>
+            </div> */}
         </div>
     );
 }

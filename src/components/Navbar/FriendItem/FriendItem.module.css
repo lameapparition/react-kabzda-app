@@ -10,3 +10,7 @@
     width: 60px;
     object-fit: cover;
 }
+
+.item:hover {
+    cursor: pointer;
+}

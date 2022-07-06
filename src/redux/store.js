@@ -1,3 +1,7 @@
+import profileReducer from './profileReducer';
+import dialoguesReducer from './dialoguesReducer';
+import sideBarReducer from './sideBarReducer';
+
 let store = {
     _state: {
         profilePage: {
@@ -7,7 +11,7 @@ let store = {
                 { id: 3, content: 'Pamparam', likeCount: 7 },
                 { id: 4, content: 'It\'s My first post!!!', likeCount: 5 }
             ],
-            newPostText: 'New Post'
+            newPostText: ''
         },
         messagesPage: {
             dialogues: [
@@ -23,7 +27,7 @@ let store = {
                 { id: 3, user: false, content: 'lets go meet tonight' },
                 { id: 4, user: true, content: 'Hello, ye of course' }
             ],
-            newMessageText: 'New Message'
+            newMessageText: ''
         },
         sideBar: {
             friends: [
@@ -33,42 +37,21 @@ let store = {
             ]
         }
     },
-    _callSubscriber() {},
+    _callSubscriber() { },
+
     getState() {
         return this._state;
     },
-    addPost() {
-        let newPost = {
-            id: 5,
-            content: this._state.profilePage.newPostText,
-            likeCount: 0
-        };
-        this._state.profilePage.posts.push(newPost);
-        this._state.profilePage.newPostText = '';
-        this._callSubscriber(this._state);
-    },
-    updatePostText(newText) {
-        this._state.profilePage.newPostText = newText;
-        this._callSubscriber(this._state);
-    },
-    addMessage() {
-        let newMessage = {
-            id: 5,
-            user: true,
-            content: this._state.messagesPage.newMessageText
-        };
-        this._state.messagesPage.messages.push(newMessage);
-        this._state.messagesPage.newMessageText = '';
-        this._callSubscriber(this._state);
-    },
-    updateMessageText(newText) {
-        this._state.messagesPage.newMessageText = newText;
-        this._callSubscriber(this._state);
-    },
     subscribe(observer) {
         this._callSubscriber = observer
+    },
+
+    dispatch(action) {
+        this._state.profilePage = profileReducer(this._state.profilePage, action);
+        this._state.messagesPage = dialoguesReducer(this._state.messagesPage, action);
+        this._state.sideBar = sideBarReducer(this._state.sideBar, action);
+        this._callSubscriber(this._state);
     }
 }
-
 export default store;
 window.store = store;

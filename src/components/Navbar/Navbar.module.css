@@ -3,6 +3,10 @@
   background-color: rgba(158, 173, 173, 0.6);
 }
 
+.link {
+  text-decoration: none;
+}
+
 .item {
   line-height: 2em;
   height: 2em;
@@ -50,7 +54,7 @@
 
 .item:hover {
   background-color: rgb(56, 80, 131);
-  cursor: pointer;
+  transition-duration: 0.5s;
 }
 
 /* .item a:active,

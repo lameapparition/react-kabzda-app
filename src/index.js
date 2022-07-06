@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import store from './redux/state';
+import store from './redux/store';
 import { BrowserRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -12,10 +12,7 @@ const rerenderEntireTree = (props) => {
     root.render(
         <BrowserRouter>
             <App state={store.getState()}
-                addPost={store.addPost.bind(store)} 
-                updatePostText={store.updatePostText.bind(store)}
-                addMessage={store.addMessage.bind(store)} 
-                updateMessageText={store.updateMessageText.bind(store)}
+                dispatch={store.dispatch.bind(store)} 
             />
         </BrowserRouter>
     );
